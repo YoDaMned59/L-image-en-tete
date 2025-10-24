@@ -1,8 +1,9 @@
 import React from 'react'
-import Acceuil from './pages/Acceuil'
-import BilanSuivi from './pages/BilanSuivi'
-import AtelierCollectif from './pages/AtelierCollectif'
-import SoinReiki from './pages/SoinReiki'
+import Header from './components/Header'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import ServicePage from './pages/ServicePage'
 import './styles/App.scss'
 
 function App() {
@@ -10,20 +11,27 @@ function App() {
   const getCurrentPage = () => {
     const path = window.location.pathname;
     
-    switch (path) {
-      case '/bilan':
-        return <BilanSuivi />;
-      case '/atelier':
-        return <AtelierCollectif />;
-      case '/reiki':
-        return <SoinReiki />;
-      default:
-        return <Acceuil />;
+    // Pages principales
+    if (path === '/about') {
+      return <About />;
     }
+    if (path === '/contact') {
+      return <Contact />;
+    }
+    
+    // Pages de services
+    if (path.startsWith('/services/')) {
+      const serviceId = path.split('/services/')[1];
+      return <ServicePage serviceId={serviceId} />;
+    }
+    
+    // Page d'accueil par défaut
+    return <Home />;
   };
 
   return (
     <div className="app">
+      <Header />
       {getCurrentPage()}
     </div>
   )
