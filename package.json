@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yodanmed59.github.io/l-image-en-tete",
+  "homepage": "https://yodamned59.github.io/L-image-en-tete",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
