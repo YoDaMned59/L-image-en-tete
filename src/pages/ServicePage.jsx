@@ -131,6 +131,10 @@ const ServicePage = ({ serviceId }) => {
               <p>Découvrez la puissance de l'apprentissage en groupe ! Dans une ambiance conviviale et bienveillante, vous développerez des compétences essentielles tout en créant des liens avec d'autres apprenants.</p>
             </div>
             
+            <div className="atelier-hero-image">
+              <img src="/src/assets/Atelier remediation cognitive.webp" alt="Ateliers de remédiation cognitive" />
+            </div>
+            
             <div className="benefits-section">
               <h3>🌟 Pourquoi choisir les ateliers collectifs ?</h3>
               <div className="benefits-grid">

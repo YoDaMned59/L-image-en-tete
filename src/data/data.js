@@ -30,10 +30,10 @@ export const siteData = {
       titre: "Ateliers collectifs",
       pourQui: "Enfants dès 7 ans, parents, étudiants",
       objectifs: [
-        "Remédiation cognitive et stratégies d'apprentissage",
+        "Remédiation cognitive, stratégies d'apprentissage par le jeu",
         "Méthodologie visuelle (mindmap, sketchnote, etc.)"
       ],
-      format: "Groupes de 8 personnes maximum",
+      format: "Séance de 1h, groupes de 8 personnes maximum",
       tarif: "10 € à 20 €",
       ton: "ludique et collaboratif"
     },

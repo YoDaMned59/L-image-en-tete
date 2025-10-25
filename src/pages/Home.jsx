@@ -35,6 +35,9 @@ const Home = () => {
           <div className="activities-grid">
             {/* Bilan & Suivi */}
             <div className="service-block bilan-block">
+              <div className="service-image">
+                <img src="/src/assets/expliquer comment faire.webp" alt="Explication de la métacognition et des méthodes d'apprentissage" />
+              </div>
               <div className="service-content">
                 <h3>{siteData.services[0].titre.toUpperCase()}</h3>
                 <p className="service-description">
@@ -51,7 +54,7 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">📍</span>
-                    <span>En cabinet (Valenciennes), à domicile ou à distance</span>
+                    <span>À domicile</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
@@ -68,6 +71,9 @@ const Home = () => {
 
             {/* Ateliers */}
             <div className="service-block atelier-block">
+              <div className="service-image">
+                <img src="/src/assets/Atelier remediation cognitive.webp" alt="Ateliers de remédiation cognitive" />
+              </div>
               <div className="service-content">
                 <h3>{siteData.services[1].titre.toUpperCase()}</h3>
                 <p className="service-description">
@@ -84,7 +90,7 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">📍</span>
-                    <span>En cabinet (Valenciennes)</span>
+                    <span>À domicile</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
