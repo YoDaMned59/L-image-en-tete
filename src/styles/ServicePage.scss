@@ -1,8 +1,8 @@
 .service-page {
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   .service-hero {
@@ -23,7 +23,12 @@
   }
   
   .objectives-section {
-    padding: 60px 0;
+    padding: 60px 20px;
+    
+    .objectives-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     
     h2 {
       font-size: 2.2rem;
@@ -60,8 +65,13 @@
   }
   
   .details-section {
-    padding: 60px 0;
+    padding: 60px 20px;
     background: #f8f9fa;
+    
+    .details-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     
     .details-grid {
       display: grid;
@@ -96,7 +106,12 @@
   }
   
   .specific-content {
-    padding: 80px 0;
+    padding: 80px 20px;
+    
+    .specific-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     
     h2 {
       font-size: 2.5rem;

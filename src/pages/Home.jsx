@@ -65,7 +65,10 @@ const Home = () => {
                     <span>{siteData.services[0].tarif}</span>
                   </div>
                 </div>
-                <a href="/services/bilan" className="cta-button">Prendre rendez-vous</a>
+                <div className="service-buttons">
+                  <a href="/services/bilan" className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="/services/bilan" className="cta-button secondary">En savoir plus</a>
+                </div>
               </div>
             </div>
 
@@ -101,7 +104,10 @@ const Home = () => {
                     <span>{siteData.services[1].tarif}</span>
                   </div>
                 </div>
-                <a href="/services/atelier" className="cta-button">Prendre rendez-vous</a>
+                <div className="service-buttons">
+                  <a href="/services/atelier" className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="/services/atelier" className="cta-button secondary">En savoir plus</a>
+                </div>
               </div>
             </div>
 
@@ -123,7 +129,7 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">📍</span>
-                    <span>En cabinet (Valenciennes) ou à distance</span>
+                    <span>En cabinet (Richebourg) ou à distance</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
@@ -134,7 +140,10 @@ const Home = () => {
                     <span>{siteData.services[2].tarif}</span>
                   </div>
                 </div>
-                <a href="/services/reiki" className="cta-button">Prendre rendez-vous</a>
+                <div className="service-buttons">
+                  <a href="/services/reiki" className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="/services/reiki" className="cta-button secondary">En savoir plus</a>
+                </div>
               </div>
             </div>
           </div>

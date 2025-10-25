@@ -49,8 +49,9 @@ const About = () => {
 
         {/* Section Méthodes */}
         <section className="methods">
-          <h2>Les méthodes que j'utilise</h2>
-          <div className="methods-grid">
+          <div className="methods-container">
+            <h2>Les méthodes que j'utilise</h2>
+            <div className="methods-grid">
             <div className="method-card">
               <div className="method-icon">🧠</div>
               <h3>Métacognition</h3>
@@ -70,6 +71,7 @@ const About = () => {
               <div className="method-icon">🤝</div>
               <h3>Accompagnement bienveillant</h3>
               <p>Écoute active et soutien personnalisé pour chaque apprenant</p>
+            </div>
             </div>
           </div>
         </section>

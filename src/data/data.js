@@ -2,8 +2,8 @@ export const siteData = {
   siteName: "L'image en tête",
   slogan: "Coaching scolaire et accompagnement dans les apprentissages",
   contact: {
-    adresse: "Valenciennes, France",
-    email: "contact@limageentete.fr",
+    adresse: "Richebourg, France",
+    email: "limageentete@gmail.com",
     telephone: "06 46 25 50 65",
     horaires: "Du lundi au samedi, de 9h à 19h"
   },

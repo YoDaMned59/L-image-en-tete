@@ -27,17 +27,20 @@ const ServicePage = ({ serviceId }) => {
 
         {/* Section Objectifs */}
         <section className="objectives-section">
-          <h2>Objectifs</h2>
-          <ul className="objectives-list">
+          <div className="objectives-container">
+            <h2>Objectifs</h2>
+            <ul className="objectives-list">
             {service.objectifs.map((objectif, index) => (
               <li key={index}>{objectif}</li>
             ))}
-          </ul>
+            </ul>
+          </div>
         </section>
 
         {/* Section Format et Tarifs */}
         <section className="details-section">
-          <div className="details-grid">
+          <div className="details-container">
+            <div className="details-grid">
             <div className="detail-card">
               <h3>Format</h3>
               <p>{service.format}</p>
@@ -50,13 +53,15 @@ const ServicePage = ({ serviceId }) => {
               <h3>Approche</h3>
               <p>{service.ton}</p>
             </div>
+            </div>
           </div>
         </section>
 
         {/* Section spécifique selon le service */}
         {service.id === 'bilan' && (
           <section className="specific-content">
-            <h2>Transformez les difficultés en réussites</h2>
+            <div className="specific-container">
+              <h2>Transformez les difficultés en réussites</h2>
             <div className="hero-description">
               <p>Votre enfant a du potentiel, mais les méthodes traditionnelles ne lui conviennent pas ? Je vous accompagne pour révéler ses talents cachés et lui redonner confiance en ses capacités.</p>
             </div>
@@ -121,18 +126,16 @@ const ServicePage = ({ serviceId }) => {
                 </div>
               </div>
             </div>
+            </div>
           </section>
         )}
 
         {service.id === 'atelier' && (
           <section className="specific-content">
-            <h2>Apprenez ensemble, progressez plus vite</h2>
+            <div className="specific-container">
+              <h2>Apprenez ensemble, progressez plus vite</h2>
             <div className="hero-description">
               <p>Découvrez la puissance de l'apprentissage en groupe ! Dans une ambiance conviviale et bienveillante, vous développerez des compétences essentielles tout en créant des liens avec d'autres apprenants.</p>
-            </div>
-            
-            <div className="atelier-hero-image">
-              <img src="/src/assets/Atelier remediation cognitive.webp" alt="Ateliers de remédiation cognitive" />
             </div>
             
             <div className="benefits-section">
@@ -194,12 +197,14 @@ const ServicePage = ({ serviceId }) => {
                 </div>
               </div>
             </div>
+            </div>
           </section>
         )}
 
         {service.id === 'reiki' && (
           <section className="specific-content">
-            <h2>Retrouvez votre équilibre intérieur</h2>
+            <div className="specific-container">
+              <h2>Retrouvez votre équilibre intérieur</h2>
             <div className="hero-description">
               <p>Le stress, l'anxiété, la fatigue vous épuisent ? Le Reiki vous offre un moment de détente profonde et de rééquilibrage énergétique pour retrouver sérénité et vitalité.</p>
             </div>
@@ -256,7 +261,7 @@ const ServicePage = ({ serviceId }) => {
               <div className="modalities-grid">
                 <div className="modality-card">
                   <h4>🏠 En cabinet</h4>
-                  <p>Dans un cadre apaisant à Valenciennes, avec tout le confort nécessaire pour une détente optimale.</p>
+                  <p>Dans un cadre apaisant à Richebourg, avec tout le confort nécessaire pour une détente optimale.</p>
                 </div>
                 <div className="modality-card">
                   <h4>🏡 À domicile</h4>
@@ -281,6 +286,7 @@ const ServicePage = ({ serviceId }) => {
                   <span className="author">- Lucas, étudiant</span>
                 </div>
               </div>
+            </div>
             </div>
           </section>
         )}
