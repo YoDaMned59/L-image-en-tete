@@ -3,6 +3,8 @@ import { siteData } from '../data/data';
 import '../styles/Home.scss';
 
 const Home = () => {
+  const { home, services } = siteData;
+
   return (
     <div className="home">
       {/* Section Hero */}
@@ -11,20 +13,17 @@ const Home = () => {
           <h1>{siteData.siteName}</h1>
           <h2>{siteData.slogan}</h2>
           <p className="hero-description">
-            Je vous accompagne avec bienveillance pour révéler votre potentiel d'apprentissage
+            {home.hero.description}
           </p>
-          <button className="cta-button">Découvrir mes services</button>
+          <button className="cta-button">{home.hero.bouton}</button>
         </div>
       </section>
 
       {/* Section Présentation */}
       <section className="presentation-section">
         <div className="container">
-          <h2>Mon approche</h2>
-          <p>
-            Je crois que chaque personne a un potentiel unique. Ma mission est de vous accompagner 
-            dans la découverte de votre façon d'apprendre pour retrouver plaisir et autonomie dans vos études.
-          </p>
+          <h2>{home.presentation.titre}</h2>
+          <p>{home.presentation.texte}</p>
         </div>
       </section>
 
@@ -39,12 +38,12 @@ const Home = () => {
                 <img src="/src/assets/expliquer comment faire.webp" alt="Explication de la métacognition et des méthodes d'apprentissage" />
               </div>
               <div className="service-content">
-                <h3>{siteData.services[0].titre.toUpperCase()}</h3>
+                <h3>{services[0].titre.toUpperCase()}</h3>
                 <p className="service-description">
-                  {siteData.services[0].pourQui}
+                  {services[0].pourQui}
                 </p>
                 <div className="objectives">
-                  <p>{siteData.services[0].objectifs.join(', ')}</p>
+                  <p>{services[0].objectifs.join(', ')}</p>
                 </div>
                 <div className="modalities">
                   <h4>Modalités :</h4>
@@ -58,11 +57,11 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
-                    <span>{siteData.services[0].format}</span>
+                    <span>{services[0].format}</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">€</span>
-                    <span>{siteData.services[0].tarif}</span>
+                    <span>{services[0].tarif}</span>
                   </div>
                 </div>
                 <div className="service-buttons">
@@ -78,12 +77,12 @@ const Home = () => {
                 <img src="/src/assets/Atelier remediation cognitive.webp" alt="Ateliers de remédiation cognitive" />
               </div>
               <div className="service-content">
-                <h3>{siteData.services[1].titre.toUpperCase()}</h3>
+                <h3>{services[1].titre.toUpperCase()}</h3>
                 <p className="service-description">
-                  {siteData.services[1].pourQui}
+                  {services[1].pourQui}
                 </p>
                 <div className="objectives">
-                  <p>{siteData.services[1].objectifs.join(', ')}</p>
+                  <p>{services[1].objectifs.join(', ')}</p>
                 </div>
                 <div className="modalities">
                   <h4>Modalités :</h4>
@@ -97,11 +96,11 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
-                    <span>{siteData.services[1].format}</span>
+                    <span>{services[1].format}</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">€</span>
-                    <span>{siteData.services[1].tarif}</span>
+                    <span>{services[1].tarif}</span>
                   </div>
                 </div>
                 <div className="service-buttons">
@@ -114,12 +113,12 @@ const Home = () => {
             {/* Reiki */}
             <div className="service-block reiki-block">
               <div className="service-content">
-                <h3>{siteData.services[2].titre.toUpperCase()}</h3>
+                <h3>{services[2].titre.toUpperCase()}</h3>
                 <p className="service-description">
-                  {siteData.services[2].pourQui}
+                  {services[2].pourQui}
                 </p>
                 <div className="objectives">
-                  <p>{siteData.services[2].objectifs.join(', ')}</p>
+                  <p>{services[2].objectifs.join(', ')}</p>
                 </div>
                 <div className="modalities">
                   <h4>Modalités :</h4>
@@ -133,11 +132,11 @@ const Home = () => {
                   </div>
                   <div className="modality-item">
                     <span className="icon">⏰</span>
-                    <span>{siteData.services[2].format}</span>
+                    <span>{services[2].format}</span>
                   </div>
                   <div className="modality-item">
                     <span className="icon">€</span>
-                    <span>{siteData.services[2].tarif}</span>
+                    <span>{services[2].tarif}</span>
                   </div>
                 </div>
                 <div className="service-buttons">
@@ -153,11 +152,11 @@ const Home = () => {
       {/* Section CTA */}
       <section className="cta-section">
         <div className="container">
-          <h2>Prêt(e) à commencer votre parcours ?</h2>
-          <p>Première rencontre gratuite sur demande</p>
+          <h2>{home.cta.titre}</h2>
+          <p>{home.cta.description}</p>
           <div className="cta-buttons">
-            <a href="/contact" className="cta-button primary">Prendre rendez-vous</a>
-            <a href="/about" className="cta-button secondary">En savoir plus</a>
+            <a href="/contact" className="cta-button primary">{home.cta.boutonPrincipal}</a>
+            <a href="/about" className="cta-button secondary">{home.cta.boutonSecondaire}</a>
           </div>
         </div>
       </section>

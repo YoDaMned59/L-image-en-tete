@@ -3,6 +3,7 @@ import { siteData } from '../data/data';
 import '../styles/Contact.scss';
 
 const Contact = () => {
+  const { contactPage, contact } = siteData;
   const [formData, setFormData] = useState({
     nom: '',
     email: '',
@@ -20,7 +21,7 @@ const Contact = () => {
     e.preventDefault();
     // Ici vous pouvez ajouter la logique d'envoi du formulaire
     console.log('Formulaire soumis:', formData);
-    alert('Message envoyé ! Je vous répondrai dans les plus brefs délais.');
+    alert(contactPage.formulaire.messageConfirmation);
     setFormData({ nom: '', email: '', message: '' });
   };
 
@@ -29,17 +30,17 @@ const Contact = () => {
       <div className="container">
         {/* Section Hero */}
         <section className="contact-hero">
-          <h1>Contact</h1>
-          <p className="hero-subtitle">N'hésitez pas à me contacter pour toute question</p>
+          <h1>{contactPage.titre}</h1>
+          <p className="hero-subtitle">{contactPage.heroSubtitle}</p>
         </section>
 
         <div className="contact-content">
           {/* Formulaire de contact */}
           <section className="contact-form-section">
-            <h2>Envoyez-moi un message</h2>
+            <h2>{contactPage.formulaire.titre}</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="nom">Nom *</label>
+                <label htmlFor="nom">{contactPage.formulaire.labels.nom}</label>
                 <input
                   type="text"
                   id="nom"
@@ -51,7 +52,7 @@ const Contact = () => {
               </div>
               
               <div className="form-group">
-                <label htmlFor="email">Email *</label>
+                <label htmlFor="email">{contactPage.formulaire.labels.email}</label>
                 <input
                   type="email"
                   id="email"
@@ -63,7 +64,7 @@ const Contact = () => {
               </div>
               
               <div className="form-group">
-                <label htmlFor="message">Message *</label>
+                <label htmlFor="message">{contactPage.formulaire.labels.message}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -75,21 +76,21 @@ const Contact = () => {
               </div>
               
               <button type="submit" className="submit-button">
-                Envoyer le message
+                {contactPage.formulaire.bouton}
               </button>
             </form>
           </section>
 
           {/* Informations de contact */}
           <section className="contact-info-section">
-            <h2>Coordonnées</h2>
+            <h2>{contactPage.coordonnees.titre}</h2>
             
             <div className="contact-details">
               <div className="contact-item">
                 <div className="contact-icon">📍</div>
                 <div className="contact-text">
                   <h3>Adresse</h3>
-                  <p>{siteData.contact.adresse}</p>
+                  <p>{contact.adresse}</p>
                 </div>
               </div>
               
@@ -97,7 +98,7 @@ const Contact = () => {
                 <div className="contact-icon">📧</div>
                 <div className="contact-text">
                   <h3>Email</h3>
-                  <p>{siteData.contact.email}</p>
+                  <p>{contact.email}</p>
                 </div>
               </div>
               
@@ -105,7 +106,7 @@ const Contact = () => {
                 <div className="contact-icon">📞</div>
                 <div className="contact-text">
                   <h3>Téléphone</h3>
-                  <p>{siteData.contact.telephone}</p>
+                  <p>{contact.telephone}</p>
                 </div>
               </div>
               
@@ -113,26 +114,26 @@ const Contact = () => {
                 <div className="contact-icon">🕒</div>
                 <div className="contact-text">
                   <h3>Horaires</h3>
-                  <p>{siteData.contact.horaires}</p>
+                  <p>{contact.horaires}</p>
                 </div>
               </div>
             </div>
 
             {/* Section réseaux sociaux */}
             <div className="social-section">
-              <h3>Suivez-moi</h3>
+              <h3>{contactPage.reseauxSociaux.titre}</h3>
               <div className="social-links">
-                <a href="#" className="social-link">Facebook</a>
-                <a href="#" className="social-link">Instagram</a>
-                <a href="#" className="social-link">LinkedIn</a>
+                {contactPage.reseauxSociaux.liens.map((reseau, index) => (
+                  <a key={index} href={reseau.url} className="social-link">{reseau.nom}</a>
+                ))}
               </div>
             </div>
 
             {/* Mention première rencontre gratuite */}
             <div className="free-consultation">
               <div className="highlight-box">
-                <h3>🎁 Première rencontre gratuite</h3>
-                <p>Sur demande, je propose une première rencontre gratuite pour faire connaissance et évaluer vos besoins.</p>
+                <h3>{contactPage.premiereRencontre.titre}</h3>
+                <p>{contactPage.premiereRencontre.description}</p>
               </div>
             </div>
           </section>

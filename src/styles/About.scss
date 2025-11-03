@@ -53,19 +53,45 @@
           margin-bottom: 1.5rem;
         }
         
-        .engagement-list {
-          list-style: none;
-          padding: 0;
+        .engagement-cards {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+          margin-top: 1.5rem;
           
-          li {
-            padding: 0.8rem 0;
-            font-size: 1.1rem;
-            color: #555;
-            border-bottom: 1px solid #eee;
+          .engagement-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 80px;
+            transition: transform 0.3s, box-shadow 0.3s;
             
-            &:last-child {
-              border-bottom: none;
+            &:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             }
+            
+            .engagement-icon {
+              font-size: 1.5rem;
+              flex-shrink: 0;
+            }
+            
+            p {
+              margin: 0;
+              font-size: 1.1rem;
+              color: #555;
+              line-height: 1.5;
+            }
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .engagement-cards {
+            grid-template-columns: 1fr;
           }
         }
       }
@@ -141,6 +167,377 @@
     }
   }
   
+  // Section Pack cadeau
+  .pack-section {
+    padding: 60px 20px;
+    background: #f8f9fa;
+    
+    .pack-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .gift-box {
+      background: #d4edda;
+      border: 3px solid #28a745;
+      border-radius: 15px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(40, 167, 69, 0.2);
+      
+      h2 {
+        font-size: 2rem;
+        color: #155724;
+        margin-bottom: 1rem;
+      }
+      
+      .pack-price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #155724;
+        margin: 1rem 0;
+      }
+      
+      .pack-description {
+        font-size: 1.2rem;
+        color: #155724;
+        margin: 0;
+      }
+    }
+  }
+
+  // Section Ateliers collectifs
+  .ateliers-section {
+    padding: 80px 20px;
+    background: white;
+    
+    .ateliers-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2c5aa0;
+        margin-bottom: 3rem;
+      }
+      
+      .themes-title {
+        font-size: 2rem;
+        color: #2c5aa0;
+        margin: 4rem 0 2rem;
+        text-align: center;
+      }
+      
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      
+      .reason-card {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s;
+        
+        &:hover {
+          transform: translateY(-5px);
+        }
+        
+        .reason-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+        
+        h3 {
+          font-size: 1.3rem;
+          color: #2c5aa0;
+          margin-bottom: 1rem;
+        }
+        
+        p {
+          color: #666;
+          line-height: 1.6;
+        }
+      }
+      
+      .themes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+        
+        .theme-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 1.5rem;
+          background: #f8f9fa;
+          border-radius: 10px;
+          border-left: 4px solid #2c5aa0;
+          
+          .theme-bullet {
+            font-size: 1.5rem;
+          }
+          
+          div {
+            flex: 1;
+            color: #555;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+
+  // Section Bilan et suivis
+  .bilan-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    
+    .bilan-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2c5aa0;
+        margin-bottom: 3rem;
+      }
+      
+      .objectives-box, .tarifs-box {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        
+        h3 {
+          font-size: 1.8rem;
+          color: #2c5aa0;
+          margin-bottom: 1.5rem;
+        }
+      }
+      
+      .objectives-list {
+        list-style: none;
+        padding: 0;
+        
+        li {
+          padding: 1rem 0;
+          padding-left: 1.5rem;
+          position: relative;
+          color: #555;
+          line-height: 1.7;
+          font-size: 1.1rem;
+          
+          &:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      
+      .tarifs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .tarif-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        
+        .tarif-label {
+          font-size: 1.1rem;
+          color: #666;
+        }
+        
+        .tarif-price {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #2c5aa0;
+        }
+      }
+      
+      .cesu-note {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        border-radius: 5px;
+        
+        p {
+          margin: 0;
+          color: #856404;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  // Section Bénéfices
+  .benefits-section {
+    padding: 80px 20px;
+    background: white;
+    
+    .benefits-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2c5aa0;
+        margin-bottom: 3rem;
+      }
+      
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      
+      .benefit-card {
+        background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+        color: white;
+        padding: 2.5rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(44, 90, 160, 0.3);
+        transition: transform 0.3s;
+        
+        &:hover {
+          transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+          font-size: 3.5rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+          font-size: 1.5rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  // Section Approche en 3 étapes
+  .approach-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    
+    .approach-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2c5aa0;
+        margin-bottom: 3rem;
+      }
+      
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      
+      .step-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: transform 0.3s;
+        
+        &:hover {
+          transform: translateY(-5px);
+        }
+        
+        .step-number {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          font-weight: bold;
+          margin: 0 auto 1.5rem;
+        }
+        
+        h3 {
+          font-size: 1.5rem;
+          color: #2c5aa0;
+          margin-bottom: 1rem;
+        }
+        
+        p {
+          color: #666;
+          line-height: 1.7;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  // Section Contact
+  .contact-section {
+    padding: 60px 20px;
+    background: white;
+    
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      
+      h2 {
+        font-size: 2.5rem;
+        color: #2c5aa0;
+        margin-bottom: 2rem;
+      }
+      
+      .contact-info {
+        .contact-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          font-size: 1.3rem;
+          color: #555;
+          
+          .contact-icon {
+            font-size: 2rem;
+          }
+          
+          .contact-text {
+            strong {
+              color: #2c5aa0;
+            }
+          }
+        }
+      }
+    }
+  }
+  
   .about-cta {
     padding: 80px 0;
     text-align: center;
@@ -182,8 +579,31 @@
       gap: 2rem;
     }
     
-    .methods .methods-grid {
+    .methods .methods-grid,
+    .ateliers-section .reasons-grid,
+    .benefits-section .benefits-grid,
+    .approach-section .steps-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .bilan-section .tarifs-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .pack-section .gift-box {
+      padding: 1.5rem;
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .pack-price {
+        font-size: 2rem;
+      }
     }
   }
 }

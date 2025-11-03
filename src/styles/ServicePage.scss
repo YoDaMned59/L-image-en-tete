@@ -133,6 +133,45 @@
       }
     }
     
+    // Section Pack cadeau
+    .pack-section {
+      padding: 0;
+      margin-bottom: 4rem;
+      
+      .pack-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .gift-box {
+        background: #d4edda;
+        border: 3px solid #28a745;
+        border-radius: 15px;
+        padding: 2.5rem;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(40, 167, 69, 0.2);
+        
+        h2 {
+          font-size: 2rem;
+          color: #155724;
+          margin-bottom: 1rem;
+        }
+        
+        .pack-price {
+          font-size: 2.5rem;
+          font-weight: bold;
+          color: #155724;
+          margin: 1rem 0;
+        }
+        
+        .pack-description {
+          font-size: 1.2rem;
+          color: #155724;
+          margin: 0;
+        }
+      }
+    }
+    
     .benefits-section, .process-section, .themes-section, .modalities-section, .testimonials-section, .schedule-section {
       margin-bottom: 4rem;
       
@@ -340,6 +379,18 @@
     
     .specific-content .content-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .specific-content .pack-section .gift-box {
+      padding: 1.5rem;
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .pack-price {
+        font-size: 2rem;
+      }
     }
     
     .service-cta .cta-buttons {
