@@ -30,11 +30,40 @@ const ServicePage = ({ serviceId }) => {
         <section className="objectives-section">
           <div className="objectives-container">
             <h2>Objectifs</h2>
-            <ul className="objectives-list">
-            {service.objectifs.map((objectif, index) => (
-              <li key={index}>{objectif}</li>
-            ))}
-            </ul>
+            {serviceId === 'reiki' ? (
+              <div className="objectives-cards-grid">
+                {service.objectifs.map((objectif, index) => (
+                  <div key={index} className="objective-card-reiki">
+                    <div className="objective-check">✓</div>
+                    <p>{objectif}</p>
+                  </div>
+                ))}
+              </div>
+            ) : serviceId === 'bilan' ? (
+              <div className="objectives-cards-grid">
+                {service.objectifs.map((objectif, index) => (
+                  <div key={index} className="objective-card-bilan">
+                    <div className="objective-check">✓</div>
+                    <p>{objectif}</p>
+                  </div>
+                ))}
+              </div>
+            ) : serviceId === 'atelier' ? (
+              <div className="objectives-cards-grid">
+                {service.objectifs.map((objectif, index) => (
+                  <div key={index} className="objective-card-atelier">
+                    <div className="objective-check">✓</div>
+                    <p>{objectif}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <ul className="objectives-list">
+                {service.objectifs.map((objectif, index) => (
+                  <li key={index}>{objectif}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </section>
 
@@ -184,61 +213,41 @@ const ServicePage = ({ serviceId }) => {
           <section className="specific-content">
             <div className="specific-container">
               <h2>{details.hero.titre}</h2>
-              <div className="hero-description">
-                <p>{details.hero.description}</p>
+              
+              {/* Carte principale Reiki */}
+              <div className="reiki-main-card">
+                <div className="reiki-card-content">
+                  <p className="reiki-intro">{details.hero.description}</p>
+                  {details.hero.suite && details.hero.suite.map((paragraphe, index) => (
+                    <p key={index} className="reiki-paragraph">{paragraphe}</p>
+                  ))}
+                </div>
               </div>
               
-              <div className="benefits-section">
-                <h3>{details.benefices.titre}</h3>
-                <div className="benefits-grid">
-                  {details.benefices.items.map((benefice, index) => (
-                    <div key={index} className="benefit-card">
-                      <div className="benefit-icon">{benefice.icone}</div>
-                      <h4>{benefice.titre}</h4>
-                      <p>{benefice.description}</p>
+              {/* Section Reiki et coaching scolaire */}
+              <div className="coaching-scolaire-section">
+                <h3>{details.coachingScolaire.titre}</h3>
+                <div className="coaching-intro-card">
+                  <p>{details.coachingScolaire.description}</p>
+                </div>
+                <div className="reiki-benefits-grid">
+                  {details.coachingScolaire.points.map((point, index) => (
+                    <div key={index} className="reiki-benefit-card">
+                      <div className="reiki-benefit-icon">✨</div>
+                      <p>{point}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="process-section">
-                <h3>{details.deroulement.titre}</h3>
-                <div className="process-steps">
-                  {details.deroulement.etapes.map((etape, index) => (
-                    <div key={index} className="step">
-                      <div className="step-number">{etape.numero}</div>
-                      <h4>{etape.titre}</h4>
-                      <p>{etape.description}</p>
-                    </div>
-                  ))}
+              {/* Section Mon approche */}
+              <div className="approche-section">
+                <h3>{details.approche.titre}</h3>
+                <div className="approche-card">
+                  <div className="approche-icon">🧘</div>
+                  <p>{details.approche.description}</p>
                 </div>
               </div>
-
-              <div className="modalities-section">
-                <h3>{details.modalites.titre}</h3>
-                <div className="modalities-grid">
-                  {details.modalites.items.map((modalite, index) => (
-                    <div key={index} className="modality-card">
-                      <h4>{modalite.icone} {modalite.titre}</h4>
-                      <p>{modalite.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {details.temoignages && (
-                <div className="testimonials-section">
-                  <h3>{details.temoignages.titre}</h3>
-                  <div className="testimonials">
-                    {details.temoignages.items.map((temoignage, index) => (
-                      <div key={index} className="testimonial">
-                        <p>"{temoignage.texte}"</p>
-                        <span className="author">{temoignage.auteur}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </section>
         )}

@@ -62,6 +62,189 @@
         }
       }
     }
+    
+    .objectives-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 0;
+      
+      .objective-card-reiki {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border-radius: 15px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        transition: all 0.3s ease;
+        border-left: 4px solid #667eea;
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, #667eea, #764ba2);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        
+        &:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
+          
+          &::before {
+            opacity: 1;
+          }
+        }
+        
+        .objective-check {
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          color: white;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          flex-shrink: 0;
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        p {
+          margin: 0;
+          font-size: 1.15rem;
+          color: #333;
+          line-height: 1.6;
+          font-weight: 500;
+        }
+      }
+      
+      .objective-card-bilan {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border-radius: 15px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 8px 25px rgba(44, 90, 160, 0.15);
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        transition: all 0.3s ease;
+        border-left: 4px solid #2c5aa0;
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, #2c5aa0, #1e3d6f);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        
+        &:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 15px 35px rgba(44, 90, 160, 0.25);
+          
+          &::before {
+            opacity: 1;
+          }
+        }
+        
+        .objective-check {
+          background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
+          color: white;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          flex-shrink: 0;
+          box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+        }
+        
+        p {
+          margin: 0;
+          font-size: 1.15rem;
+          color: #333;
+          line-height: 1.6;
+          font-weight: 500;
+        }
+      }
+      
+      .objective-card-atelier {
+        background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
+        border-radius: 15px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15);
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        transition: all 0.3s ease;
+        border-left: 4px solid #ffc107;
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, #ffc107, #ff9800);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        
+        &:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+          
+          &::before {
+            opacity: 1;
+          }
+        }
+        
+        .objective-check {
+          background: linear-gradient(135deg, #ffc107, #ff9800);
+          color: white;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          flex-shrink: 0;
+          box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+        
+        p {
+          margin: 0;
+          font-size: 1.15rem;
+          color: #333;
+          line-height: 1.6;
+          font-weight: 500;
+        }
+      }
+    }
   }
   
   .details-section {
@@ -172,7 +355,7 @@
       }
     }
     
-    .benefits-section, .process-section, .themes-section, .modalities-section, .testimonials-section, .schedule-section {
+    .benefits-section, .process-section, .themes-section, .modalities-section, .testimonials-section, .schedule-section, .coaching-scolaire-section, .approche-section {
       margin-bottom: 4rem;
       
       h3 {
@@ -180,6 +363,141 @@
         color: #2c5aa0;
         text-align: center;
         margin-bottom: 2rem;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        text-align: center;
+      }
+    }
+    
+    // Carte principale Reiki
+    .reiki-main-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 3rem auto;
+      max-width: 900px;
+      box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+      color: white;
+      
+      .reiki-card-content {
+        .reiki-intro {
+          font-size: 1.2rem;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+          color: white;
+          text-align: center;
+        }
+        
+        .reiki-paragraph {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          margin-bottom: 1rem;
+          color: rgba(255, 255, 255, 0.95);
+          text-align: center;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    
+    // Section coaching scolaire
+    .coaching-intro-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #2c5aa0;
+      
+      p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.7;
+        text-align: left;
+      }
+    }
+    
+    .reiki-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      
+      .reiki-benefit-card {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-top: 3px solid #667eea;
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .reiki-benefit-icon {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        p {
+          margin: 0;
+          font-size: 1rem;
+          color: #555;
+          line-height: 1.6;
+        }
+      }
+    }
+    
+    // Carte Mon approche
+    .approche-card {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+      }
+      
+      .approche-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      p {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.8;
+        font-style: italic;
       }
     }
     
@@ -293,25 +611,41 @@
     
     .schedule-info {
       background: linear-gradient(135deg, #2c5aa0, #1e3d6f);
-      color: white;
-      padding: 2rem;
+      color: #ffffff;
+      padding: 2.5rem;
       border-radius: 15px;
       text-align: center;
+      box-shadow: 0 10px 30px rgba(44, 90, 160, 0.3);
       
       p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        line-height: 1.6;
+        font-size: 1.15rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.8;
+        color: #ffffff;
+        font-weight: 400;
+        
+        strong {
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 1.15rem;
+        }
       }
       
       .cta-info {
         margin-top: 2rem;
         padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-top: 2px solid rgba(255, 255, 255, 0.4);
         
         p {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           font-weight: 600;
+          color: #ffffff;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          
+          strong {
+            font-weight: 700;
+            font-size: 1.3rem;
+          }
         }
       }
     }

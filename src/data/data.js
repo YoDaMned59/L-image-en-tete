@@ -420,73 +420,26 @@ export const siteData = {
     
     reiki: {
       hero: {
-        titre: "Retrouvez votre équilibre intérieur",
-        description: "Le stress, l'anxiété, la fatigue vous épuisent ? Le Reiki vous offre un moment de détente profonde et de rééquilibrage énergétique pour retrouver sérénité et vitalité."
-      },
-      benefices: {
-        titre: "✨ Les bienfaits du Reiki",
-        items: [
-          {
-            icone: "🧘",
-            titre: "Détente profonde",
-            description: "Relâchement des tensions physiques et mentales, sensation de bien-être immédiate. Un moment de pure relaxation pour vous ressourcer."
-          },
-          {
-            icone: "⚡",
-            titre: "Réduction du stress",
-            description: "Le Reiki aide à évacuer le stress accumulé, à retrouver calme et sérénité. Parfait pour les périodes d'examens ou de surcharge mentale."
-          },
-          {
-            icone: "💪",
-            titre: "Stimulation de l'auto-guérison",
-            description: "Le Reiki active les processus naturels de guérison du corps, renforce le système immunitaire et accélère la récupération."
-          },
-          {
-            icone: "🌟",
-            titre: "Équilibre énergétique",
-            description: "Harmonisation des chakras et rééquilibrage de l'énergie vitale pour retrouver vitalité, clarté mentale et bien-être général."
-          }
+        titre: "Le Reiki, une approche douce et globale",
+        description: "Le Reiki est un soin énergétique d'origine japonaise où l'énergie universelle est transmise par apposition des mains sur différentes régions du corps. Elle agit sur plusieurs plans : mental, émotionnel et physique.",
+        suite: [
+          "Il stimule le potentiel actif d'auto-guérison que l'on a tous en nous. Ce processus d'autorégulation nous permet de maintenir une stabilité face aux variations",
+          "Offrez vous un moment de détente, dans l'instant présent et retrouvez votre calme et une clarté intérieure"
         ]
       },
-      deroulement: {
-        titre: "🔄 Déroulement d'une séance",
-        etapes: [
-          {
-            numero: 1,
-            titre: "Échange préliminaire",
-            description: "Nous discutons de vos besoins, de vos attentes et de vos éventuelles préoccupations. Cette écoute bienveillante est essentielle."
-          },
-          {
-            numero: 2,
-            titre: "Relaxation et soin",
-            description: "Allongé(e) confortablement, vous recevez le soin Reiki. Pas de contact physique nécessaire, l'énergie circule naturellement."
-          },
-          {
-            numero: 3,
-            titre: "Retour d'expérience",
-            description: "Nous échangeons sur vos ressentis et je vous donne des conseils pour prolonger les bienfaits chez vous."
-          }
+      coachingScolaire: {
+        titre: "Reiki et coaching scolaire",
+        description: "Associé au coaching scolaire, le Reiki devient un véritable soutien pour l'équilibre intérieur.",
+        points: [
+          "Cette combinaison permet à l'élève de mettre en œuvre plus facilement les stratégies travaillées ensemble.",
+          "Il soutient l'élève de façon subtile, en l'aidant à se recentrer et à se reconnecter à ses propres ressources.",
+          "Grâce à cette approche, l'élève peut être plus présent dans ses études.",
+          "Il aborde les défis scolaires avec plus de recul et de sérénité."
         ]
       },
-      modalites: {
-        titre: "📍 Modalités de soin",
-        items: [
-          {
-            icone: "🏠",
-            titre: "En cabinet",
-            description: "Dans un cadre apaisant à Richebourg, avec tout le confort nécessaire pour une détente optimale."
-          },
-          {
-            icone: "🏡",
-            titre: "À domicile",
-            description: "Je me déplace chez vous pour plus de confort, dans votre environnement familier."
-          },
-          {
-            icone: "📱",
-            titre: "À distance",
-            description: "Le Reiki fonctionne parfaitement à distance. Séance par visio ou téléphone, depuis votre domicile."
-          }
-        ]
+      approche: {
+        titre: "Mon approche",
+        description: "Je suis praticienne Reiki, initiée au second degré, et j'accompagne les élèves (et leurs parents) à retrouver équilibre, confiance et bien-être pour avancer plus sereinement dans leur parcours scolaire et personnel."
       }
     }
   },

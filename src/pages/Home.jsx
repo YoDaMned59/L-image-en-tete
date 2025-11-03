@@ -112,6 +112,11 @@ const Home = () => {
 
             {/* Reiki */}
             <div className="service-block reiki-block">
+              <div className="service-image">
+                <div className="reiki-placeholder">
+                  <div className="reiki-icon">🧘</div>
+                </div>
+              </div>
               <div className="service-content">
                 <h3>{services[2].titre.toUpperCase()}</h3>
                 <p className="service-description">
