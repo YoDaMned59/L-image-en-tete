@@ -1,6 +1,8 @@
 import React from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
+import expliquerImage from '../assets/expliquer comment faire.webp';
+import atelierImage from '../assets/Atelier remediation cognitive.webp';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -41,7 +43,7 @@ const Home = () => {
             {/* Bilan & Suivi */}
             <div className="service-block bilan-block">
               <div className="service-image">
-                <img src="/src/assets/expliquer comment faire.webp" alt="Explication de la métacognition et des méthodes d'apprentissage" />
+                <img src={expliquerImage} alt="Explication de la métacognition et des méthodes d'apprentissage" />
               </div>
               <div className="service-content">
                 <h3>{services[0].titre.toUpperCase()}</h3>
@@ -80,7 +82,7 @@ const Home = () => {
             {/* Ateliers */}
             <div className="service-block atelier-block">
               <div className="service-image">
-                <img src="/src/assets/Atelier remediation cognitive.webp" alt="Ateliers de remédiation cognitive" />
+                <img src={atelierImage} alt="Ateliers de remédiation cognitive" />
               </div>
               <div className="service-content">
                 <h3>{services[1].titre.toUpperCase()}</h3>
