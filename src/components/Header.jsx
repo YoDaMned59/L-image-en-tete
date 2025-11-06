@@ -118,9 +118,9 @@ const Header = () => {
           >
             Services
             <div className="dropdown-content">
-              <button onClick={() => navigateToPage('/services/bilan')}>Mon bilan & suivi</button>
-              <button onClick={() => navigateToPage('/services/atelier')}>Mes ateliers</button>
-              <button onClick={() => navigateToPage('/services/reiki')}>Mon soin Reiki</button>
+              <button className="dropdown-item" onClick={() => navigateToPage('/services/bilan')}>Mon bilan & suivi</button>
+              <button className="dropdown-item" onClick={() => navigateToPage('/services/atelier')}>Mes ateliers</button>
+              <button className="dropdown-item" onClick={() => navigateToPage('/services/reiki')}>Mon soin Reiki</button>
             </div>
           </button>
           <button 
