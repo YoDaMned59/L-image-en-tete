@@ -1,10 +1,16 @@
 import React from 'react';
 import { siteData } from '../data/data';
+import { navigate } from '../utils/pathUtils';
 import '../styles/ServicePage.scss';
 
 const ServicePage = ({ serviceId }) => {
   const service = siteData.services.find(s => s.id === serviceId);
   const details = service ? siteData.servicesDetails[serviceId] : null;
+
+  const handleLinkClick = (e, path) => {
+    e.preventDefault();
+    navigate(path);
+  };
 
   if (!service || !details) {
     return (
@@ -257,8 +263,8 @@ const ServicePage = ({ serviceId }) => {
           <h2>Intéressé(e) par ce service ?</h2>
           <p>N'hésitez pas à me contacter pour plus d'informations ou pour prendre rendez-vous</p>
           <div className="cta-buttons">
-            <a href="/contact" className="cta-button primary">Prendre rendez-vous</a>
-            <a href="/" className="cta-button secondary">Retour à l'accueil</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">Prendre rendez-vous</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, '/')} className="cta-button secondary">Retour à l'accueil</a>
           </div>
         </section>
       </div>

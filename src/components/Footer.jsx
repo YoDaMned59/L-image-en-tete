@@ -1,10 +1,10 @@
 import React from 'react';
+import { navigate } from '../utils/pathUtils';
 import '../styles/Footer.scss';
 
 const Footer = () => {
   const navigateTo = (path) => {
-    window.history.pushState({}, '', path);
-    window.dispatchEvent(new PopStateEvent('popstate'));
+    navigate(path);
   };
 
   return (

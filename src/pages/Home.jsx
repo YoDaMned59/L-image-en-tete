@@ -1,9 +1,15 @@
 import React from 'react';
 import { siteData } from '../data/data';
+import { navigate } from '../utils/pathUtils';
 import '../styles/Home.scss';
 
 const Home = () => {
   const { home, services } = siteData;
+
+  const handleLinkClick = (e, path) => {
+    e.preventDefault();
+    navigate(path);
+  };
 
   return (
     <div className="home">
@@ -65,8 +71,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="service-buttons">
-                  <a href="/services/bilan" className="cta-button primary">Prendre rendez-vous</a>
-                  <a href="/services/bilan" className="cta-button secondary">En savoir plus</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/bilan')} className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/bilan')} className="cta-button secondary">En savoir plus</a>
                 </div>
               </div>
             </div>
@@ -104,8 +110,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="service-buttons">
-                  <a href="/services/atelier" className="cta-button primary">Prendre rendez-vous</a>
-                  <a href="/services/atelier" className="cta-button secondary">En savoir plus</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/atelier')} className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/atelier')} className="cta-button secondary">En savoir plus</a>
                 </div>
               </div>
             </div>
@@ -145,8 +151,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="service-buttons">
-                  <a href="/services/reiki" className="cta-button primary">Prendre rendez-vous</a>
-                  <a href="/services/reiki" className="cta-button secondary">En savoir plus</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/reiki')} className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/reiki')} className="cta-button secondary">En savoir plus</a>
                 </div>
               </div>
             </div>
@@ -160,8 +166,8 @@ const Home = () => {
           <h2>{home.cta.titre}</h2>
           <p>{home.cta.description}</p>
           <div className="cta-buttons">
-            <a href="/contact" className="cta-button primary">{home.cta.boutonPrincipal}</a>
-            <a href="/about" className="cta-button secondary">{home.cta.boutonSecondaire}</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">{home.cta.boutonPrincipal}</a>
+            <a href="#" onClick={(e) => handleLinkClick(e, '/about')} className="cta-button secondary">{home.cta.boutonSecondaire}</a>
           </div>
         </div>
       </section>

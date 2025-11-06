@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { siteData } from '../data/data';
+import { normalizePath, navigate } from '../utils/pathUtils';
 import '../styles/Header.scss';
 
 const Header = () => {
@@ -13,21 +14,26 @@ const Header = () => {
   // Détecter la page courante
   React.useEffect(() => {
     const updateActivePage = () => {
-      const path = window.location.pathname;
+      const path = normalizePath(window.location.pathname);
       switch (path) {
         case '/about':
+        case '/about/':
           setActivePage('about');
           break;
         case '/contact':
+        case '/contact/':
           setActivePage('contact');
           break;
         case '/services/bilan':
+        case '/services/bilan/':
           setActivePage('bilan');
           break;
         case '/services/atelier':
+        case '/services/atelier/':
           setActivePage('atelier');
           break;
         case '/services/reiki':
+        case '/services/reiki/':
           setActivePage('reiki');
           break;
         default:
@@ -48,11 +54,11 @@ const Header = () => {
 
   const navigateToPage = (path) => {
     // Mettre à jour l'état actif immédiatement
-    const pageName = path === '/' ? 'home' : path.substring(1);
+    const pageName = path === '/' ? 'home' : path.substring(1).split('/')[0];
     setActivePage(pageName);
     
-    // Naviguer vers la page
-    window.location.href = path;
+    // Naviguer vers la page en utilisant l'API History
+    navigate(path);
     setIsMenuOpen(false);
   };
 
@@ -112,9 +118,9 @@ const Header = () => {
           >
             Services
             <div className="dropdown-content">
-              <a href="/services/bilan">Mon bilan & suivi</a>
-              <a href="/services/atelier">Mes ateliers</a>
-              <a href="/services/reiki">Mon soin Reiki</a>
+              <button onClick={() => navigateToPage('/services/bilan')}>Mon bilan & suivi</button>
+              <button onClick={() => navigateToPage('/services/atelier')}>Mes ateliers</button>
+              <button onClick={() => navigateToPage('/services/reiki')}>Mon soin Reiki</button>
             </div>
           </button>
           <button 

@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-<BrowserRouter basename="/l-image-en-tete">
-  <App />
-</BrowserRouter>
+  <StrictMode>
+    <App />
+  </StrictMode>
 )
