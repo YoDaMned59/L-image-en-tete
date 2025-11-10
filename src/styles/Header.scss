@@ -21,9 +21,11 @@ $shadow: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
     @media (max-width: 768px) {
       padding: 1rem;
+      gap: 0.5rem;
     }
   }
 
@@ -31,11 +33,14 @@ $shadow: rgba(0, 0, 0, 0.1);
   .logo-section {
     display: flex;
     align-items: center;
+    flex: 0 1 auto;
+    min-width: 0;
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
+      min-width: 0;
 
       .logo-icon {
         position: relative;
@@ -74,16 +79,20 @@ $shadow: rgba(0, 0, 0, 0.1);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: $primary-teal;
         font-weight: 600;
+        min-width: 0;
+        flex-shrink: 1;
 
         .logo-line1 {
           font-size: 1.4rem;
           line-height: 1;
+          white-space: nowrap;
         }
 
         .logo-line2 {
           font-size: 1.2rem;
           line-height: 1;
           margin-left: 0.5rem;
+          white-space: nowrap;
         }
       }
     }
@@ -122,9 +131,14 @@ $shadow: rgba(0, 0, 0, 0.1);
     cursor: pointer;
     padding: 0.5rem;
     gap: 0.25rem;
+    flex-shrink: 0;
 
     @media (max-width: 768px) {
       display: flex;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.4rem;
     }
 
     .hamburger-line {
@@ -132,6 +146,11 @@ $shadow: rgba(0, 0, 0, 0.1);
       height: 3px;
       background: $primary-teal;
       transition: all 0.3s ease;
+
+      @media (max-width: 480px) {
+        width: 22px;
+        height: 2.5px;
+      }
     }
 
     &:hover .hamburger-line {
@@ -367,26 +386,73 @@ $shadow: rgba(0, 0, 0, 0.1);
 
 @media (max-width: 480px) {
   .header .header-container {
-    padding: 0.75rem;
+    padding: 0.75rem 0.5rem;
+
+    .logo-section {
+      flex: 0 1 auto;
+      min-width: 0;
+      
+      .logo {
+        gap: 0.5rem;
+        min-width: 0;
+        
+        .logo-icon {
+          flex-shrink: 0;
+          
+          .graduation-cap {
+            font-size: 1.4rem;
+          }
+
+          .paper-plane {
+            font-size: 1.1rem;
+          }
+        }
+
+        .logo-text {
+          flex-shrink: 1;
+          min-width: 0;
+          
+          .logo-line1 {
+            font-size: 0.95rem;
+          }
+
+          .logo-line2 {
+            font-size: 0.85rem;
+            margin-left: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media query spécifique pour iPhone (petits écrans)
+@media (max-width: 375px) {
+  .header .header-container {
+    padding: 0.75rem 0.5rem;
+    gap: 0.25rem;
 
     .logo-section .logo {
+      gap: 0.4rem;
+      
       .logo-icon {
         .graduation-cap {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
         }
 
         .paper-plane {
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
       }
 
       .logo-text {
         .logo-line1 {
-          font-size: 1rem;
+          font-size: 0.9rem;
         }
 
         .logo-line2 {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
+          margin-left: 0.25rem;
         }
       }
     }
