@@ -1,7 +1,9 @@
 .home {
   .hero-section {
     height: 60vh;
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3d6f 50%, #ff8c42 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

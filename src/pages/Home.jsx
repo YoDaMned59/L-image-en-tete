@@ -3,6 +3,7 @@ import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
 import expliquerImage from '../assets/expliquer comment faire.webp';
 import atelierImage from '../assets/Atelier remediation cognitive.webp';
+import heroBackgroundImage from '../assets/soutien-scolaire.jpg';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <div className="home">
       {/* Section Hero */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ backgroundImage: `url(${heroBackgroundImage})` }}>
         <div className="hero-content">
           <h1>{siteData.siteName}</h1>
           <h2>{siteData.slogan}</h2>
