@@ -25,6 +25,11 @@ function App() {
     };
   }, []);
 
+  // Scroll vers le haut à chaque changement de page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPath]);
+
   // Routage simple basé sur l'URL
   const getCurrentPage = () => {
     const path = currentPath;

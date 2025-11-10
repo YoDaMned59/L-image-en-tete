@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { siteData } from '../data/data';
 import { navigate } from '../utils/pathUtils';
 import expliquerImage from '../assets/expliquer comment faire.webp';
@@ -7,10 +7,17 @@ import '../styles/Home.scss';
 
 const Home = () => {
   const { home, services } = siteData;
+  const activitiesSectionRef = useRef(null);
 
   const handleLinkClick = (e, path) => {
     e.preventDefault();
     navigate(path);
+  };
+
+  const scrollToActivities = () => {
+    if (activitiesSectionRef.current) {
+      activitiesSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -23,7 +30,7 @@ const Home = () => {
           <p className="hero-description">
             {home.hero.description}
           </p>
-          <button className="cta-button">{home.hero.bouton}</button>
+          <button className="cta-button" onClick={scrollToActivities}>{home.hero.bouton}</button>
         </div>
       </section>
 
@@ -36,7 +43,7 @@ const Home = () => {
       </section>
 
       {/* Section Mes Activités */}
-      <section className="activities-section">
+      <section className="activities-section" ref={activitiesSectionRef}>
         <div className="container">
           <h2>Mes activités</h2>
           <div className="activities-grid">
@@ -73,7 +80,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="service-buttons">
-                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/bilan')} className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">Prendre rendez-vous</a>
                   <a href="#" onClick={(e) => handleLinkClick(e, '/services/bilan')} className="cta-button secondary">En savoir plus</a>
                 </div>
               </div>
@@ -112,7 +119,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="service-buttons">
-                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/atelier')} className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">Prendre rendez-vous</a>
                   <a href="#" onClick={(e) => handleLinkClick(e, '/services/atelier')} className="cta-button secondary">En savoir plus</a>
                 </div>
               </div>
@@ -153,7 +160,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="service-buttons">
-                  <a href="#" onClick={(e) => handleLinkClick(e, '/services/reiki')} className="cta-button primary">Prendre rendez-vous</a>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '/contact')} className="cta-button primary">Prendre rendez-vous</a>
                   <a href="#" onClick={(e) => handleLinkClick(e, '/services/reiki')} className="cta-button secondary">En savoir plus</a>
                 </div>
               </div>

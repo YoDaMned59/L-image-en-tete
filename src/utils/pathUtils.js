@@ -32,6 +32,8 @@ export const addBasePath = (path) => {
 export const navigate = (path) => {
   const fullPath = addBasePath(path);
   window.history.pushState({}, '', fullPath);
+  // Scroll vers le haut de la page
+  window.scrollTo(0, 0);
   // Déclencher un événement personnalisé pour notifier le changement
   window.dispatchEvent(new PopStateEvent('popstate'));
 };

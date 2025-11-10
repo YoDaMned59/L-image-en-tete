@@ -386,11 +386,6 @@ export const siteData = {
         titre: "📚 Thématiques des ateliers",
         items: [
           {
-            icone: "🧠",
-            titre: "Gestion du stress scolaire",
-            description: "Techniques de relaxation, gestion des émotions, préparation aux examens. Pour retrouver la sérénité face aux apprentissages."
-          },
-          {
             icone: "📝",
             titre: "Méthodes de prise de notes",
             description: "Mind mapping, sketchnote, Cornell... Découvrez la méthode qui vous convient le mieux pour retenir efficacement."
